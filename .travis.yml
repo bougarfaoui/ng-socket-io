@@ -1,0 +1,8 @@
+before_script:
+  - npm install
+script:
+  - tsc; npm test
+language: node_js
+node_js:
+  - "4"
+  - "5.1"
