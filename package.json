@@ -1,0 +1,56 @@
+{
+  "name": "ng2-socket-io",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "Bougarfaoui El Houcine",
+    "email": "bougarfaoui.el.houcine@gmail.com"
+  },
+  "main": "index.js",
+  "module": "index.js",
+  "jsnext:main": "index.js",
+  "tags": [
+    "angular2",
+    "socket.io",
+    "typescript",
+    "angular2-socket.io"
+  ],
+  "scripts": {
+    "test": "jasmine ./spec/socket.spec.js"
+  },
+  "dependencies": {
+    "@angular/common": "^2.3.1",
+    "@angular/compiler": "^2.3.1",
+    "@angular/core": "^2.3.1",
+    "@angular/platform-browser": "^2.3.1",
+    "@angular/platform-browser-dynamic": "^2.3.1",
+    "@types/socket.io-client": "^1.4.29",
+    "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.10",
+    "rxjs": "^5.0.1",
+    "socket.io": "^1.7.3",
+    "ts-helpers": "^1.1.1",
+    "zone.js": "^0.7.2"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "^2.3.1",
+    "@types/jasmine": "2.5.38",
+    "@types/node": "^6.0.63",
+    "@types/socket.io": "^1.4.28",
+    "codelyzer": "~2.0.0-beta.1",
+    "es6-shim": "^0.35.3",
+    "jasmine": "^2.5.3",
+    "jasmine-core": "2.5.2",
+    "jasmine-spec-reporter": "2.5.0",
+    "karma": "1.2.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-remap-istanbul": "^0.2.1",
+    "protractor": "~4.0.13",
+    "server-destroy": "^1.0.1",
+    "ts-node": "1.2.1",
+    "tslint": "^4.3.0",
+    "typescript": "~2.0.3"
+  }
+}
