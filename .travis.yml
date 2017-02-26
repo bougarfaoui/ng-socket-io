@@ -4,5 +4,4 @@ script:
   - tsc; npm test
 language: node_js
 node_js:
-  - "4"
-  - "5.1"
+  - "6"
