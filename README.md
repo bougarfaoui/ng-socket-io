@@ -90,7 +90,7 @@ if you unsubscribe to this observable the listener will removed using  ```socket
 
 ##### Example
 
-```
+```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Observable } from 'rxjs/Observable' 
