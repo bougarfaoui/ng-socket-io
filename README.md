@@ -1,8 +1,7 @@
 # ng2-socket-io
-[Socket.IO](http://socket.io/) module for Angular 2
-
 [![Build Status](https://travis-ci.org/bougarfaoui/ng2-socket-io.svg?branch=master)](https://travis-ci.org/bougarfaoui/ng2-socket-io)
 
+[Socket.IO](http://socket.io/) module for Angular 2
 
 ## Install
 ``` npm install ng2-socket-io ```
