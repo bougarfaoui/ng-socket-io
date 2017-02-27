@@ -63,9 +63,8 @@ export class ChatService {
 
 ## API
 
-Most of the functionalities here your`re already familiar with.
-the only addition is the ```onEvent``` method, which return an ```Observable``` that you can subscribe to
-
+Most of the functionalities here you are already familiar with.
+the only addition is the ```onEvent``` method, which return an ```Observable``` that you can subscribe to.
 ### `socket.on(eventName: string)`
 Takes an event name and callback.
 Works the same as in Socket.IO.
