@@ -27,7 +27,7 @@ export class WrappedSocket {
         return this.ioSocket.connect();
     }
 
-    disconnect(close: any) {
+    disconnect(close?: any) {
         return this.ioSocket.disconnect.apply(this.ioSocket, arguments);
     }
 
@@ -39,7 +39,7 @@ export class WrappedSocket {
         return this.ioSocket.removeListener.apply(this.ioSocket, arguments);
     }
 
-    removeAllListeners(eventName: string) {
+    removeAllListeners(eventName?: string) {
         return this.ioSocket.removeAllListeners.apply(this.ioSocket, arguments);
     }
 
