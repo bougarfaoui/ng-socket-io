@@ -137,3 +137,7 @@ class ChatService {
 export class AppModule { }
 ```
 
+
+## LICENSE
+
+MIT
