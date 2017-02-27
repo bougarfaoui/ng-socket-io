@@ -5,9 +5,11 @@ import { SocketIoConfig } from './socketIoConfig';
 
 
 /** Socket factory */
-function SocketFactory(socketConfig: SocketIoConfig) {
-    return new WrappedSocket(socketConfig);
+export function SocketFactory(config: SocketIoConfig) {
+    return new WrappedSocket(config);
 }
+
+export const socketConfig: string = "__SOCKET_IO_CONFIG__";
 
 @NgModule({})
 export class SocketIoModule {
@@ -15,7 +17,12 @@ export class SocketIoModule {
         return {
             ngModule: SocketIoModule,
             providers: [
-                { provide: WrappedSocket, useValue: SocketFactory(config) }
+                { provide: socketConfig, useValue: config },
+                { 
+                    provide: WrappedSocket,
+                    useFactory: SocketFactory,
+                    deps : [socketConfig]
+                }
             ]
         };
     }
