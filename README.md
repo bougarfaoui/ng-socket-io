@@ -74,7 +74,7 @@ import { Socket } from 'ng2-socket-io';
 export class SocketOne extends Socket {
 
     constructor() {
-        super({ url: 'http://url_one', options: {} });
+        super({ url: 'http://url_one:portOne', options: {} });
     }
 
 }
@@ -83,7 +83,7 @@ export class SocketOne extends Socket {
 export class SocketTwo extends Socket {
 
     constructor() {
-        super({ url: 'http://url_two', options: {} });
+        super({ url: 'http://url_two:portTwo', options: {} });
     }
 
 }
