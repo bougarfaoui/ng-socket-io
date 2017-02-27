@@ -62,6 +62,52 @@ export class ChatService {
 }
 ```
 
+### Using multiple sockets with different end points
+
+In this case we don't need to configure The ```SocketIoModule```, what we have to do is to extend the ```Socket``` service and specify the ```url``` and the ```options``` object.
+
+```typescript
+import { Injectable, NgModule } from '@angular/core';
+import { Socket } from 'ng2-socket-io';
+
+@Injectable()
+export class SocketOne extends Socket {
+
+    constructor() {
+        super({ url: 'http://url_one', options: {} });
+    }
+
+}
+
+@Injectable()
+export class SocketTwo extends Socket {
+
+    constructor() {
+        super({ url: 'http://url_two', options: {} });
+    }
+
+}
+
+@NgModule({
+  declarations: [
+    //components
+  ],
+  imports: [
+    SocketIoModule,
+    //...
+  ],
+  providers: [SocketOne, SocketTwo],
+  bootstrap: [/** AppComponent **/]
+})
+export class AppModule { }
+ 
+```
+
+Now you can inject ```SocketOne```, ```SocketTwo``` in other services and components.
+
+As you see there is no need to configure the ```SocketIoModule``` using ```forRoot``` method.
+
+
 ## API
 
 Most of the functionalities here you are already familiar with.
