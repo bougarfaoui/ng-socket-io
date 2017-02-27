@@ -137,6 +137,8 @@ if you unsubscribe to this observable the listener will removed using  ```socket
 
 ##### Example
 
+You can also see this [example](https://github.com/bougarfaoui/ng2-socket-io/tree/master/examples/chat-app) with express.js.
+
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
