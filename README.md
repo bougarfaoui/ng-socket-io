@@ -40,7 +40,6 @@ The ```SocketIoModule``` provides now a configured ```Socket``` service that can
 
 ```typescript
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable' 
 import { Socket } from 'ng2-socket-io';
 
 @Injectable()
@@ -93,7 +92,6 @@ if you unsubscribe to this observable the listener will removed using  ```socket
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Observable } from 'rxjs/Observable' 
 import { AppComponent } from './app.component';
 
 import { SocketIoModule, SocketIoConfig, Socket} from 'ng2-socket-io';
