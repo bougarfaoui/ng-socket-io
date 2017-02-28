@@ -135,6 +135,8 @@ Takes an event name and returns an Observable that you can subscribe to.
 You should keep a reference to the Observable subscription and unsubscribe when you're done with it.
 This prevents memory leaks as the event listener attached will be removed (using ```socket.removeListener```) ONLY and when/if you unsubscribe.
 
+If you have multiple subscriptions to an Observable only the last unsubscription will remove the listener.
+
 ##### Example
 
 You can also see this [example](https://github.com/bougarfaoui/ng2-socket-io/tree/master/examples/chat-app) with express.js.
