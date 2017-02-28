@@ -103,7 +103,7 @@ export class AppModule { }
  
 ```
 
-Now you can inject ```SocketOne```, ```SocketTwo``` in any other service and / or components.
+Now you can inject ```SocketOne```, ```SocketTwo``` in any other services and / or components.
 
 
 ## API
@@ -129,7 +129,7 @@ Sends a message to the server.
 Optionally takes a callback.
 Works the same as in Socket.IO.
 
-### `socket.fromEvent(eventName: string): Observable<any>`
+### `socket.fromEvent<T>(eventName: string): Observable<T>`
 Takes an event name and returns an Observable that you can subscribe to.
 
 You should keep a reference to the Observable subscription and unsubscribe when you're done with it.
@@ -159,7 +159,7 @@ class ChatService {
 
     getMessage() {
         return this.socket
-            .fromEvent("message")
+            .fromEvent<any>("message")
             .subscribe((message) => {
                 // todo
             });
