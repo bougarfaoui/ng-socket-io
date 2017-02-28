@@ -55,9 +55,7 @@ export class ChatService {
     getMessage() {
         return this.socket
             .fromEvent("message")
-            .subscribe((message) => {
-                 // todo
-            });
+            .map( data => data.msg );
     }
 }
 ```
@@ -162,9 +160,7 @@ class ChatService {
     getMessage() {
         return this.socket
             .fromEvent<any>("message")
-            .subscribe((message) => {
-                // todo
-            });
+            .map(data => data.msg );
     }
     
     close() {
