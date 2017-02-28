@@ -37,7 +37,7 @@ Now we pass the configuration to the static method ```forRoot``` of ```SocketIoM
 
 ### Using your socket Instance
 
-The ```SocketIoModule``` provides now a configured ```Socket``` service that can be inject anywhere inside the ```AppModule```.
+The ```SocketIoModule``` provides now a configured ```Socket``` service that can be injected anywhere inside the ```AppModule```.
 
 ```typescript
 import { Injectable } from '@angular/core';
@@ -64,7 +64,7 @@ export class ChatService {
 
 ### Using multiple sockets with different end points
 
-In this case we don't need to configure The ```SocketIoModule```, what we have to do is to extend the ```Socket``` service and specify the ```url``` and the ```options``` object.
+In this case we do not configure the ```SocketIoModule``` directly using ```forRoot```. What we have to do is: extend the ```Socket``` service, and call ```super()``` with the ```SocketIoConfig``` object type (passing ```url``` & ```options``` if any).
 
 ```typescript
 import { Injectable, NgModule } from '@angular/core';
@@ -103,16 +103,14 @@ export class AppModule { }
  
 ```
 
-Now you can inject ```SocketOne```, ```SocketTwo``` in other services and components.
-
-As you see there is no need to configure the ```SocketIoModule``` using ```forRoot``` method.
+Now you can inject ```SocketOne```, ```SocketTwo``` in any other service and / or components.
 
 
 ## API
 
 Most of the functionalities here you are already familiar with.
 
-the only addition is the ```onEvent``` method, which returns an ```Observable``` that you can subscribe to.
+The only addition is the ```fromEvent``` method, which returns an ```Observable``` that you can subscribe to.
 
 ### `socket.on(eventName: string)`
 Takes an event name and callback.
@@ -132,8 +130,10 @@ Optionally takes a callback.
 Works the same as in Socket.IO.
 
 ### `socket.fromEvent(eventName: string): Observable<any>`
-Takes an event name and return an observable that you can subscribe to.
-if you unsubscribe to this observable the listener will removed using  ```socket.removeListener```.
+Takes an event name and returns an Observable that you can subscribe to.
+
+You should keep a reference to the Observable subscription and unsubscribe when you're done with it.
+This prevents memory leaks as the event listener attached will be removed (using ```socket.removeListener```) ONLY and when/if you unsubscribe.
 
 ##### Example
 
