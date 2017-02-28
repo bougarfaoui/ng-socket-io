@@ -16,8 +16,8 @@ export class  ChatComponent {
     this.chatService
         .getMessage()
         .subscribe(msg => {
-          this.msg = msg;
-        })
+          this.msg = "1st "+msg;
+        });
   }
 
   sendMsg(msg){

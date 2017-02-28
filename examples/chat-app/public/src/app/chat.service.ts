@@ -10,7 +10,7 @@ export class ChatService {
 
     getMessage() {
         return this.socket
-            .fromEvent("msg")
+            .fromEvent<any>("msg")
             .map(data => data.msg);
     }
 
