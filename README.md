@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/ng2-socket-io.svg)](https://badge.fury.io/js/ng2-socket-io)
 [![npm downloads](https://img.shields.io/badge/Downloads-400%2Fmonth-brightgreen.svg)](https://github.com/bougarfaoui/ng2-socket-io)
 
-[Socket.IO](http://socket.io/) module for Angular 2 , 4
+[Socket.IO](http://socket.io/) module for Angular 2 and 4
 
 ## Install
 ``` npm install ng-socket-io ```
