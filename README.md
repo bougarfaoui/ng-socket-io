@@ -1,12 +1,12 @@
-# ng2-socket-io
+# ng-socket-io
 [![Build Status](https://travis-ci.org/bougarfaoui/ng2-socket-io.svg?branch=master)](https://travis-ci.org/bougarfaoui/ng2-socket-io)
 [![npm version](https://badge.fury.io/js/ng2-socket-io.svg)](https://badge.fury.io/js/ng2-socket-io)
 [![npm downloads](https://img.shields.io/badge/Downloads-400%2Fmonth-brightgreen.svg)](https://github.com/bougarfaoui/ng2-socket-io)
 
-[Socket.IO](http://socket.io/) module for Angular 2
+[Socket.IO](http://socket.io/) module for Angular 2 , 4
 
 ## Install
-``` npm install ng2-socket-io ```
+``` npm install ng-socket-io ```
 
 ## How to use
 
@@ -14,7 +14,7 @@
 
 ```ts
 //...
-import { SocketIoModule, SocketIoConfig } from 'ng2-socket-io';
+import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
 
 const config: SocketIoConfig = { url: 'http://localhost:8988', options: {} };
 
@@ -42,7 +42,7 @@ The ```SocketIoModule``` provides now a configured ```Socket``` service that can
 
 ```typescript
 import { Injectable } from '@angular/core';
-import { Socket } from 'ng2-socket-io';
+import { Socket } from 'ng-socket-io';
 
 @Injectable()
 export class ChatService {
@@ -67,7 +67,7 @@ In this case we do not configure the ```SocketIoModule``` directly using ```forR
 
 ```typescript
 import { Injectable, NgModule } from '@angular/core';
-import { Socket } from 'ng2-socket-io';
+import { Socket } from 'ng-socket-io';
 
 @Injectable()
 export class SocketOne extends Socket {
@@ -138,14 +138,14 @@ If you have multiple subscriptions to an Observable only the last unsubscription
 
 ##### Example
 
-You can also see this [example](https://github.com/bougarfaoui/ng2-socket-io/tree/master/examples/chat-app) with express.js.
+You can also see this [example](https://github.com/bougarfaoui/ng-socket-io/tree/master/examples/chat-app) with express.js.
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
-import { SocketIoModule, SocketIoConfig, Socket} from 'ng2-socket-io';
+import { SocketIoModule, SocketIoConfig, Socket} from 'ng-socket-io';
 
 const config: SocketIoConfig = { url: 'http://localhost:8988', options: {} };
 
