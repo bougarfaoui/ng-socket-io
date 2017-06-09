@@ -1,5 +1,5 @@
 {
-  "name": "ng2-socket-io",
+  "name": "ng-socket-io",
   "version": "0.1.5",
   "license": "MIT",
   "author": {
@@ -17,6 +17,10 @@
   ],
   "scripts": {
     "test": "jasmine ./spec/socket.spec.js"
+  },
+  "dependencies": {
+    "@types/socket.io-client": "^1.4.29",
+    "socket.io-client": "^2.0.2"
   },
   "devDependencies": {
      "@angular/common": "^4.1.3",
