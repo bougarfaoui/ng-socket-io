@@ -1,2 +1,2 @@
-examples/chat-app/* linguist-vendored
-spec/* linguist-vendored
+* linguist-vendored
+*.ts linguist-vendored=false
