@@ -58,5 +58,9 @@ export class WrappedSocket {
             };
         }).share();
     }
-
+   
+    /* Creates a Promise for a one-time event */
+    fromEventOnce<T>(eventName: string): Promise<T> {
+        return new Promise<T>(resolve => this.once(eventName, resolve));
+    }
 }
