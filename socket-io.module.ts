@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders, InjectionToken } from '@angular/core';
 
 import { WrappedSocket } from './socket-io.service';
 import { SocketIoConfig } from './socketIoConfig';
@@ -9,7 +9,7 @@ export function SocketFactory(config: SocketIoConfig) {
     return new WrappedSocket(config);
 }
 
-export const socketConfig: string = "__SOCKET_IO_CONFIG__";
+export const SOCKET_CONFIG_TOKEN = new InjectionToken<SocketIoConfig>('__SOCKET_IO_CONFIG__');
 
 @NgModule({})
 export class SocketIoModule {
@@ -17,11 +17,11 @@ export class SocketIoModule {
         return {
             ngModule: SocketIoModule,
             providers: [
-                { provide: socketConfig, useValue: config },
+                { provide: SOCKET_CONFIG_TOKEN, useValue: config },
                 { 
                     provide: WrappedSocket,
                     useFactory: SocketFactory,
-                    deps : [socketConfig]
+                    deps : [SOCKET_CONFIG_TOKEN]
                 }
             ]
         };
