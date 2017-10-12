@@ -131,6 +131,10 @@ Works the same as in Socket.IO.
 ### `socket.fromEvent<T>(eventName: string): Observable<T>`
 Takes an event name and returns an Observable that you can subscribe to.
 
+### socket.fromEventOnce<T>(eventName: string): Promise<T>
+Takes an event name, and returns a Promise instead of an Observable. 
+Works the same as `once` in Socket.IO.
+
 You should keep a reference to the Observable subscription and unsubscribe when you're done with it.
 This prevents memory leaks as the event listener attached will be removed (using ```socket.removeListener```) ONLY and when/if you unsubscribe.
 
