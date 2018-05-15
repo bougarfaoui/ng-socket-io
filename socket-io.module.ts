@@ -1,12 +1,12 @@
-import { NgModule, ModuleWithProviders, InjectionToken } from '@angular/core';
+import { NgModule, ModuleWithProviders, InjectionToken, NgZone } from '@angular/core';
 
 import { WrappedSocket } from './socket-io.service';
 import { SocketIoConfig } from './socketIoConfig';
 
 
 /** Socket factory */
-export function SocketFactory(config: SocketIoConfig) {
-    return new WrappedSocket(config);
+export function SocketFactory(config: SocketIoConfig, ngZone: NgZone) {
+    return new WrappedSocket(config, ngZone);
 }
 
 export const SOCKET_CONFIG_TOKEN = new InjectionToken<SocketIoConfig>('__SOCKET_IO_CONFIG__');

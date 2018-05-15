@@ -1,6 +1,6 @@
-import { Injectable, EventEmitter, Inject } from '@angular/core';
+import { Injectable, EventEmitter, Inject, NgZone } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/share'; 
+import 'rxjs/add/operator/share';
 
 import * as io from 'socket.io-client';
 
@@ -11,10 +11,10 @@ export class WrappedSocket {
     subscribersCounter = 0;
     ioSocket: any;
 
-    constructor(@Inject(SOCKET_CONFIG_TOKEN) config: SocketIoConfig) {
+    constructor(@Inject(SOCKET_CONFIG_TOKEN) config: SocketIoConfig, ngZone: NgZone) {
         const url: string = config.url || '';
         const options: any = config.options || {};
-        this.ioSocket = io(url, options);
+        ngZone.runOutsideAngular(() => this.ioSocket = io(url, options));
     }
 
     on(eventName: string, callback: Function) {
@@ -58,7 +58,7 @@ export class WrappedSocket {
             };
         }).share();
     }
-   
+
     /* Creates a Promise for a one-time event */
     fromEventOnce<T>(eventName: string): Promise<T> {
         return new Promise<T>(resolve => this.once(eventName, resolve));
