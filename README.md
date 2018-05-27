@@ -36,6 +36,26 @@ We need to configure ```SocketIoModule``` module using the object ```config``` o
 
 Now we pass the configuration to the static method ```forRoot``` of ```SocketIoModule```
 
+### For Angular 6 Project
+
+ To be sure that you are using Angular 6, check your version:
+
+> ng -v
+
+If you are using Angular 6 you need change two thing
+
+1. Install rxjs-compat
+
+> npm install rxjs-compat
+
+2. Change polyfills.ts
+
+Add this code in the first line of the file:
+
+```ts
+(window as any).global = window;
+```
+
 ### Using your socket Instance
 
 The ```SocketIoModule``` provides now a configured ```Socket``` service that can be injected anywhere inside the ```AppModule```.
