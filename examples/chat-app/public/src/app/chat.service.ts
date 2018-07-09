@@ -1,21 +1,24 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable'
-import 'rxjs/add/operator/map'; 
-import { Socket } from 'ng-socket-io';
+import { Socket } from '../../../../../index';
+import { map } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ChatService {
 
-    constructor(private socket: Socket) {}
+  constructor(private socket: Socket) {
+  }
 
-    getMessage() {
-        return this.socket
-            .fromEvent<any>("msg")
-            .map(data => data.msg);
-    }
+  getMessage() {
+    return this.socket
+      .fromEvent<any>('msg')
+      .pipe(
+        map(data => data.msg)
+      );
+  }
 
-    sendMessage(msg: string) {
-        this.socket
-            .emit("msg", msg);
-    }
+  sendMessage(msg: string) {
+    this.socket.emit('msg', msg);
+  }
 }

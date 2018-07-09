@@ -3,7 +3,7 @@ require("es6-shim");
 
 var enableDestroy = require('server-destroy');
 var http = require('http');
-var IOSocket = require("../socket-io.service.js").WrappedSocket;
+var IOSocket = require("../dist/socket-io.service.js").WrappedSocket;
 var server, io;
 
 beforeEach(function(){
@@ -26,7 +26,7 @@ beforeEach(function(){
 
 afterEach(function(){
   server.destroy();
-})
+});
 
 
 
@@ -42,9 +42,9 @@ describe("fromEvent",function(){
       expect(data).toEqual("someData"); 
       done();
     });
-  
-  }); 
-})
+
+  });
+});
 
 describe("unsubcribe from Event",function(){
   it('should be equal', (done) => {
@@ -59,9 +59,9 @@ describe("unsubcribe from Event",function(){
       expect(unsubcribeCallBack).not.toHaveBeenCalled();
       done();
     },200);
-    
-  }); 
-})
+
+  });
+});
 
  
 
@@ -74,9 +74,9 @@ describe("on",function(){
       expect(data).toEqual("someData");
       done();
     });
-  
-  }); 
-})
+
+  });
+});
 
 
 describe("once",function(){
@@ -93,8 +93,8 @@ describe("once",function(){
       expect(count).toEqual(1);
       done();
     },200)
-  }); 
-})
+  });
+});
 
 describe("emit",function(){
   it('should be equal', (done) => {
@@ -106,8 +106,8 @@ describe("emit",function(){
       expect(data).toEqual("Msg Received");
       done();
     });
-  }); 
-})
+  });
+});
 
 
 describe("should remove the listener",function(){
@@ -121,8 +121,8 @@ describe("should remove the listener",function(){
       expect(removeListenerCallBack).not.toHaveBeenCalled();
       done();
     },200);
-  }); 
-})
+  });
+});
 
 describe("removeAllListeners",function(){
   it('should remove all listeners ', (done) => {
@@ -137,8 +137,8 @@ describe("removeAllListeners",function(){
       expect(removeAllListenersCallBack).not.toHaveBeenCalled();
       done();
     },200);
-  }); 
-})
+  });
+});
 
 
 describe("disconnect",function(){
@@ -152,6 +152,6 @@ describe("disconnect",function(){
       expect(disconnectCallBack).not.toHaveBeenCalled();
       done();
     },200);
-  }); 
-})
+  });
+});
 

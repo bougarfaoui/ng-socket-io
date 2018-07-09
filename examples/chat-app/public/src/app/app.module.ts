@@ -1,18 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
-import { ChatComponent } from './chat.component';
+
+import { AppComponent } from './app.component';
+import { SocketIoModule } from '../../../../../socket-io.module';
+import { SocketIoConfig } from '../../../../../socketIoConfig';
 
 const config: SocketIoConfig = { url: 'http://localhost:8988', options: {} };
 
 @NgModule({
   declarations: [
-    ChatComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    SocketIoModule.forRoot(config) 
+    SocketIoModule.forRoot(config)
   ],
-  bootstrap: [ChatComponent]
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
