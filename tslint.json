@@ -9,10 +9,13 @@
       true,
       "check-space"
     ],
-    "curly": true,
+    "curly": false,
     "eofline": true,
     "forin": true,
-    "import-blacklist": [true, "rxjs"],
+    "import-blacklist": [
+      true,
+      "rxjs/Rx"
+    ],
     "import-spacing": true,
     "indent": [
       true,

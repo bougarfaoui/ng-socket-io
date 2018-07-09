@@ -10,6 +10,13 @@
 
 ## How to use
 
+####Angular 6 Note:
+For use with Angular 6+ and RxJS 6+ add the following line to `polyfills.ts`
+```ts
+// ./src/polyfills.ts
+(window as any).global = window;
+```
+
 ### Import and configure SocketIoModule
 
 ```ts
@@ -40,7 +47,7 @@ Now we pass the configuration to the static method ```forRoot``` of ```SocketIoM
 
 The ```SocketIoModule``` provides now a configured ```Socket``` service that can be injected anywhere inside the ```AppModule```.
 
-```typescript
+```ts
 import { Injectable } from '@angular/core';
 import { Socket } from 'ng-socket-io';
 
@@ -65,7 +72,7 @@ export class ChatService {
 
 In this case we do not configure the ```SocketIoModule``` directly using ```forRoot```. What we have to do is: extend the ```Socket``` service, and call ```super()``` with the ```SocketIoConfig``` object type (passing ```url``` & ```options``` if any).
 
-```typescript
+```ts
 import { Injectable, NgModule } from '@angular/core';
 import { Socket } from 'ng-socket-io';
 
@@ -144,7 +151,7 @@ If you have multiple subscriptions to an Observable only the last unsubscription
 
 You can also see this [example](https://github.com/bougarfaoui/ng-socket-io/tree/master/examples/chat-app) with express.js.
 
-```typescript
+```ts
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
