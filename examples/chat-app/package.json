@@ -11,7 +11,7 @@
     "debug": "~2.2.0",
     "express": "~4.13.4",
     "jade": "~1.11.0",
-    "morgan": "~1.7.0",
+    "morgan": "~1.9.1",
     "serve-favicon": "~2.3.0",
     "socket.io": "^1.7.3"
   }
